@@ -1,10 +1,11 @@
-Welcome to the my very first changelog. So excited to finally implement this in my ROM. Super special thanks to both Ryzen5950XT and salvo_giangri in Telegram for making this work in my ROM
+Welcome to the NcX changelog
 
-Changelog from v5.1-March > v5.1-April:
-• Release based on April S21 FE Firmware (G990BXXU4EWC7)
-• Fixed volume bar not being themed (thanks to Samsung)
-• Added 5 signal bars in CSC features
-• Add multiple resolution options in Settings
+Changelog from v1.0.0 > v1.0.1:
+• Updated ROM frameworks to XXXX
+• Updated system base to XXXX
 
-On Update Release
-• Initial release
+On Update from v1.0.0 > v1.2.0:
+• Added a pre-install warning
+• Fixed multiple cards in Credits page
+• Fixed multi-clicks behaviour
+• Reworked changelog parse code
