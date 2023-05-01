@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OnOTAInfo>
   <RomName>NcX S21FE</RomName>
-  <VersionName>5.1.05</VersionName>
+  <VersionName>1.0.1</VersionName>
   <BuildNumber type="integer">01052023</BuildNumber>
   <DownloadURL><![CDATA[speed.hetzner.de/1GB.bin]]></DownloadURL>
   <AndroidVer>13</AndroidVer>
