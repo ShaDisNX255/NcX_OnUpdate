@@ -1,10 +1,9 @@
 Welcome to the NcX changelog
 
-Changelog from v5.1.04 > v5.1.05:
-• Release based on April S21 FE Firmware (G990BXXU4EWC7)
-• Fixed volume bar not being themed (thanks to Samsung)
-• Added 5 signal bars in CSC features
-• Add multiple resolution options in Settings
+Changelog from v5.1. - April > v5.1 - May:
+• Release based on May S21 FE Firmware (G990BXXU4EWC7)
+• Fix Super Steady - Camera
+• Update logo, it now changes with the current palette - Settings
 
 On Update v1.0.0:
 • Initial release
