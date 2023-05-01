@@ -1,11 +1,10 @@
 Welcome to the NcX changelog
 
-Changelog from v1.0.0 > v1.0.1:
-• Updated ROM frameworks to XXXX
-• Updated system base to XXXX
+Changelog from v5.1.04 > v5.1.05:
+• Release based on April S21 FE Firmware (G990BXXU4EWC7)
+• Fixed volume bar not being themed (thanks to Samsung)
+• Added 5 signal bars in CSC features
+• Add multiple resolution options in Settings
 
-On Update from v1.0.0 > v1.2.0:
-• Added a pre-install warning
-• Fixed multiple cards in Credits page
-• Fixed multi-clicks behaviour
-• Reworked changelog parse code
+On Update v1.0.0:
+• Initial release
