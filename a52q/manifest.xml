@@ -6,8 +6,8 @@
   <DownloadURL>https://github.com/ShaDisNX255/NcX_OnUpdate/releases/download/a52q-20230501/OTA-20230501.zip</DownloadURL>
   <AndroidVer>13</AndroidVer>
   <OneUIVer>5.1</OneUIVer>
-  <CheckMD5>e92654d2b33e0de91032d4a58262519c</CheckMD5>
-  <FileSize type="long">49702595</FileSize>
+  <CheckMD5>227144902335a7735977fffca008eb6c</CheckMD5>
+  <FileSize type="long">49702611</FileSize>
   <WebsiteURL>https://forum.xda-developers.com/apps/magisk/dev-magisk-canary-channel-bleeding-edge-t3839337</WebsiteURL>
   <ChangelogHeader>https://i.ibb.co/92RxppQ/changelogheader1100.png</ChangelogHeader>
   <ChangelogURL>https://raw.githubusercontent.com/ShaDisNX255/NcX_OnUpdate/main/a52q/changelog.txt</ChangelogURL>
