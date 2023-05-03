@@ -1,9 +1,7 @@
 Welcome to the NcX changelog
 
-Changelog from v5.1. - April > v5.1 - May:
-• Release based on May S21 FE Firmware (G990BXXU4EWC7)
+Changelog from 20230401 > 20230501:
 • Fix Super Steady - Camera
-• Update logo, it now changes with the current palette - Settings
 
 On Update v1.0.0:
 • Initial release
