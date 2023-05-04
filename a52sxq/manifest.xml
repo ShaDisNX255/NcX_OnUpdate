@@ -2,7 +2,7 @@
 <OnOTAInfo>
   <RomName>NcX S21FE</RomName>
   <VersionName>5.1 - May Update</VersionName>
-  <BuildNumber type="integer">20230501</BuildNumber>
+  <BuildNumber type="integer">20230401</BuildNumber>
   <DownloadURL></DownloadURL>
   <AndroidVer>13</AndroidVer>
   <OneUIVer>5.1</OneUIVer>
