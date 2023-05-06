@@ -1,5 +1,8 @@
 Welcome to the NcX changelog
 
+Changelog from 20230501 > 20230502:
+• Add permissions for NcXOnUpdate to allow notifications after wiping data
+
 Changelog from 20230401 > 20230501:
 • Fix Reboot to Download Mode - SystemUI
 
