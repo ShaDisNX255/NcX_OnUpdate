@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog from 20230502 > 20230503:
+• Re-hide Updater app from app drawer
+• Add permissions for NcXOnUpdate to allow notifications after wiping data
+
 Changelog from 20230501 > 20230502:
 • Fix: Settings force closing - SecSettings
 
