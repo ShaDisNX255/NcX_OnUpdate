@@ -1,6 +1,7 @@
 Welcome to the NcX changelog
 
 Changelog from 20230401 > 20230501:
+• Fix Reboot to Download Mode - SystemUI
 
 
 On Update v1.0.0:

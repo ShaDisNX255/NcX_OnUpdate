@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OnOTAInfo>
   <RomName>NcX S21FE</RomName>
-  <VersionName>5.1 - May Update</VersionName>
-  <BuildNumber type="integer">20230401</BuildNumber>
-  <DownloadURL></DownloadURL>
+  <VersionName>20230502 Update</VersionName>
+  <BuildNumber type="integer">20230501</BuildNumber>
+  <DownloadURL>https://github.com/ShaDisNX255/NcX_OnUpdate/releases/download/a71-20230501/OTA-20230501-a71.zip</DownloadURL>
   <AndroidVer>13</AndroidVer>
   <OneUIVer>5.1</OneUIVer>
-  <CheckMD5></CheckMD5>
-  <FileSize type="long"></FileSize>
+  <CheckMD5>ef0751fa9f5d616478d02f735271f5be</CheckMD5>
+  <FileSize type="long">28277364</FileSize>
   <WebsiteURL>https://forum.xda-developers.com/apps/magisk/dev-magisk-canary-channel-bleeding-edge-t3839337</WebsiteURL>
   <ChangelogHeader>https://i.ibb.co/92RxppQ/changelogheader1100.png</ChangelogHeader>
   <ChangelogURL>https://raw.githubusercontent.com/ShaDisNX255/NcX_OnUpdate/main/a71/changelog.txt</ChangelogURL>
