@@ -1,5 +1,8 @@
 Welcome to the NcX changelog
 
+Changelog from 20230503 > 20230504:
+• Fix Document Scan crashing when saving a new document - Camera
+
 Changelog from 20230502 > 20230503:
 • Add permissions for NcXOnUpdate to allow notifications after wiping data
 
