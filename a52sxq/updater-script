@@ -16,19 +16,23 @@ setdefault devices off
 ui_print " "
 
 ui_print " ___________________________________"
-ui_print "       20230503 update - A52s       "
+ui_print "      20230504 update - A52s        "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
 
 #Installation
 ui_print " Mounting partitions... "
 auto_mount_partitions
+ui_print " Deleting broken libs... "
+delete_recursive /system/lib/libDocShadowRemoval.arcsoft.so
+delete_recursive /syste/lib64/libDocShadowRemoval.arcsoft.so
 ui_print " Extracting files... "
 package_extract_dir system /system
 ui_print " Updating ROM version strings... "
-update_file_string "ro.on.core.version=20230503" "/system/build.prop"
-update_file_string "ro.on.core.build=20230503" "/system/build.prop"
+update_file_string "ro.on.core.version=20230504" "/system/build.prop"
+update_file_string "ro.on.core.build=20230504" "/system/build.prop"
 ui_print " Giving permissions... "
 set_perm 0 0 0644 /system/system_ext/priv-app/SystemUI/SystemUI.apk
+set_perm 0 0 0644 /system/priv-app/NcXOnUpdate/a52sxq.apk
 set_perm 0 0 0644 /system/build.prop
 set_perm 0 0 0644 /system/etc/default-permissions/default-permissions_com.mesalabs.ten.update.xml
 set_perm 0 0 0644 /system/etc/permissions/privapp_whitelist_com.mesalabs.ten.update.xml
