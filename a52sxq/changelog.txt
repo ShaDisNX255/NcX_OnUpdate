@@ -1,5 +1,8 @@
 Welcome to the NcX changelog
 
+Changelog from 20230504 > 20230505:
+• Fix typo from previous update
+
 Changelog from 20230503 > 20230504:
 • Fix Document Scan crashing when saving a new document - Camera
 
