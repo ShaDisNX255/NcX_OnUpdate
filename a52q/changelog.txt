@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog from 20230503 > 20230504:
+• May security update
+• Remove FM Radio
+
 Changelog from 20230502 > 20230503:
 • Add permissions for NcXOnUpdate to allow notifications after wiping data
 
