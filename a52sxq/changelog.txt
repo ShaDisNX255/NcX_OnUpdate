@@ -1,5 +1,8 @@
 Welcome to the NcX changelog
 
+Changelog from 20230505 > 20230506:
+• May security update
+
 Changelog from 20230504 > 20230505:
 • Fix typo from previous update
 
