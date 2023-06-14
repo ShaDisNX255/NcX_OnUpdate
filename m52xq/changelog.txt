@@ -1,5 +1,11 @@
 Welcome to the NcX changelog
 
+Changelog from 20230503 > 20230504 [Magisk re-installation required]:
+• Release based on May S21 FE Firmware (G990BXXS4EWE3)
+• Add multiple resolution options in Settings
+• Officially added OTA support
+• Fixed Reboot to download mode - SystemUI
+
 Changelog from 20230502 > 20230503:
 • Re-hide Updater app from app drawer
 • Add permissions for NcXOnUpdate to allow notifications after wiping data
