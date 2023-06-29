@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog from 20230506 > 20230601:
+• June security update
+• Add support for BL versions from 1 to 4
+
 Changelog from 20230505 > 20230506:
 • May security update
 
