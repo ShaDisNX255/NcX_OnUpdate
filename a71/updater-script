@@ -12,31 +12,222 @@ setdefault devices off
 #-----------------------------------------------#
 #script:
 
-#for printing stuff
+
+#Print
 ui_print " "
-
 ui_print " ___________________________________"
-ui_print "       20230502 update - A71        "
+ui_print "       20230601 update - A71       "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
-
-#Installation
-ui_print " Mounting partitions... "
-auto_mount_partitions
-ui_print " Extracting files... "
-package_extract_dir system /system
-ui_print " Updating ROM version strings... "
-update_file_string "ro.on.core.version=20230502" "/system/build.prop"
-update_file_string "ro.on.core.build=20230502" "/system/build.prop"
-ui_print " Giving permissions... "
-set_perm 0 0 0644 /system/system_ext/priv-app/SystemUI/SystemUI.apk
-set_perm 0 0 0644 /system/build.prop
-set_perm 0 0 0644 /system/etc/default-permissions/default-permissions_com.mesalabs.ten.update.xml
-set_perm 0 0 0644 /system/etc/permissions/privapp_whitelist_com.mesalabs.ten.update.xml
-#Delete update
-ui_print " Deleting update from storage and update app settings... "
-delete_recursive /data/media/0/Android/data/com.mesalabs.ten.update
-delete_recursive /data/data/com.mesalabs.ten.update
-#unmount
-ui_print " Unmounting... "
-umount_all
+#Get device info
+model=$(grep_cmdline androidboot.em.model)
+FILE=/data/tmp.txt
+if ! exist "$FILE"; then
+   ui_print " Unmounting all partitions... "
+   umount_all
+   ui_print " Installing stock kernel... "
+   update_zip boot.img $(find_block boot)
+   ui_print " Installing super... "
+   update_zip -xz super.img.xz $(find_block super)
+   create_file "$FILE"
+   ui_print " Extracting new script... "
+   auto_mount_partitions
+   package_extract_dir script /cache
+   package_extract_dir data /data
+   ui_print " Super img Installed. press any volume button     " 
+   ui_print " to reboot to recovery, flash again and the zip   "
+   ui_print " should install step 2 automatically. If your     "
+   ui_print " device doesn't automatically reboot to recovery, "
+   ui_print " you may need to force reboot it.                 "
+   ui_print " "
+   ui_print " "
+   ui_print " Press any volume button to continue... "
+   if $yes; then
+      run_program "$addons/reboot" recovery
+   else
+      run_program "$addons/reboot" recovery
+   fi
+else
+   #Mount
+   ui_print " Mounting partitions... "
+   auto_mount_partitions
+   ui_print " Beginning 2nd step of installation... "
+   #Installation
+   ui_print " ___________________________________________________ "
+   ui_print " -----------------NcX Installation------------------ "
+   ui_print " "
+   ui_print " Welcome to the ROM installation. I have made two    "
+   ui_print " different installation options here . The           "
+   ui_print " default and advanced installation. The default      "
+   ui_print " installation is the standard experience with        "
+   ui_print " predetermined options. If you want to customize     "
+   ui_print " installation with your own selection, select the    "
+   ui_print " advanced installation. The default installation     "
+   ui_print " selects the following options:                      "
+   ui_print " Ultra debloat: No                                   "
+   ui_print " AOD to lockscreen animation: Yes                    "
+   ui_print " Blur mode: Live blur                                "
+   ui_print " DeX Standalone: Off                                 "
+   ui_print " Custom bootanimation zip support: On                "
+   ui_print " "
+   ui_print " "
+   ui_print " Volume up = Default installation                    "
+   ui_print " Volume down = Advanced installation                 "
+   ui_print " "
+   ui_print " ----Volume up = Default | Volume down = Advanced--- "
+   ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ "
+   if $yes; then
+      ui_print " Regular debloat kept, keeping extra apps "
+      ui_print " Adding animation "
+      replace "    <SEC_FLOATING_FEATURE_FRAMEWORK_CONFIG_AOD_ITEM>aodversion=7" "    <SEC_FLOATING_FEATURE_FRAMEWORK_CONFIG_AOD_ITEM>activeclock=7,aodversion=7" /system/etc/floating_feature.xml
+      ui_print " Blur mode set to live blur "
+      replace "    <SEC_FLOATING_FEATURE_GRAPHICS_SUPPORT_3D_SURFACE_TRANSITION_FLAG>FALSE" "    <SEC_FLOATING_FEATURE_GRAPHICS_SUPPORT_3D_SURFACE_TRANSITION_FLAG>TRUE" /system/etc/floating_feature.xml
+      ui_print " DeX Standalone disabled "
+      replace "    <SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE>standalone,dual" "    <SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE>dual" /system/etc/floating_feature.xml
+      ui_print " Custom boot animation zip support added "
+      package_extract_dir "bootzip" /system
+      set_perm 0 0 0755 /system/bin/bootanimation
+      set_perm 0 0 0644 /system/lib64/libbootanimation.so
+      set_perm 0 0 0644 /system/media/bootanimation.zip
+   else
+      ui_print " Advanced installation selected "
+      #Debloat
+      ui_print " ___________________________________________________ "
+      ui_print " ------------Do you want Ultra Debloat-------------? "
+      ui_print " "
+      ui_print " Note: Check the ROMs GitHub page to see the extra   "
+      ui_print " apps that this deletes. Deletes more Samsung apps   "
+      ui_print " but not all, so keep that in mind                   "
+      ui_print " "
+      ui_print " ---------Volume up = Yes | Volume down = No-------- "
+      ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ "
+      if $yes; then
+         ui_print " Ultra Debloat selected "
+         delete_recursive /system/app/SamsungCalendar
+         delete_recursive /system/priv-app/GameHome
+         delete_recursive /system/priv-app/GameOptimizingService
+         delete_recursive /system/priv-app/GameTools_Dream
+         delete_recursive /system/priv-app/HybridRadio
+      else
+         ui_print " Regular debloat kept, keeping extra apps "
+      fi
+      #Clocktransition
+      ui_print " ___________________________________________________ "
+      ui_print " Do you want to add the AOD to Lockscreen animation? "
+      ui_print " "
+      ui_print " Note: Avoid using this with FOD as it can mess with "
+      ui_print " the AOD brightness. Still usable, but can be        "
+      ui_print " annoying. There is a workaround, check in XDA       "
+      ui_print " "
+      ui_print " ---------Volume up = Yes | Volume down = No-------- "
+      ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ "
+      if $yes; then
+         ui_print " Adding animation "
+         replace "    <SEC_FLOATING_FEATURE_FRAMEWORK_CONFIG_AOD_ITEM>aodversion=7" "    <SEC_FLOATING_FEATURE_FRAMEWORK_CONFIG_AOD_ITEM>activeclock=7,aodversion=7" /system/etc/floating_feature.xml
+      else
+         ui_print " Skipping this animation "
+         replace "    <SEC_FLOATING_FEATURE_FRAMEWORK_CONFIG_AOD_ITEM>activeclock=7,aodversion=7" "    <SEC_FLOATING_FEATURE_FRAMEWORK_CONFIG_AOD_ITEM>aodversion=7" /system/etc/floating_feature.xml
+      fi
+      #BlurType
+      ui_print " ___________________________________________________ "
+      ui_print "    What type of blur would you like installed?      "
+      ui_print " "
+      ui_print " Live blur is the type included in Samsung flagships "
+      ui_print " and static blur is the stock a52s blur. This is the "
+      ui_print " blur noticeable when you pull down the notifications"
+      ui_print " "
+      ui_print " -----Volume up = Live | Volume down = Static------- "
+      ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ "
+      if $yes; then
+         ui_print " Adding live blur "
+         replace "    <SEC_FLOATING_FEATURE_GRAPHICS_SUPPORT_3D_SURFACE_TRANSITION_FLAG>FALSE" "    <SEC_FLOATING_FEATURE_GRAPHICS_SUPPORT_3D_SURFACE_TRANSITION_FLAG>TRUE" /system/etc/floating_feature.xml
+      else
+         ui_print " Adding static blur "
+         replace "    <SEC_FLOATING_FEATURE_GRAPHICS_SUPPORT_3D_SURFACE_TRANSITION_FLAG>TRUE" "    <SEC_FLOATING_FEATURE_GRAPHICS_SUPPORT_3D_SURFACE_TRANSITION_FLAG>FALSE" /system/etc/floating_feature.xml
+      fi
+      #DeXStandalone
+      ui_print " ___________________________________________________ "
+      ui_print "     Would you like to activate DeX Standalone?      "
+      ui_print " "
+      ui_print " DeX Standalone will allow you to use DeX in your    "
+      ui_print " device without the need of an external display.     "
+      ui_print " This will unfortunately break DeX to PC             "
+      ui_print " "
+      ui_print " --------Volume up = Yes | Volume down = No--------- "
+      ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ "
+      if $yes; then
+         ui_print " DeX Standalone enabled "
+         replace "    <SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE>dual" "    <SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE>standalone,dual" /system/etc/floating_feature.xml
+      else
+         ui_print " DeX Standalone disabled "
+         replace "    <SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE>standalone,dual" "    <SEC_FLOATING_FEATURE_COMMON_CONFIG_DEX_MODE>dual" /system/etc/floating_feature.xml
+      fi
+      #BootAnimation
+      ui_print " ___________________________________________________ "
+      ui_print " Do you want to add custom bootanimation zip support?"
+      ui_print " "
+      ui_print " Note: This will add NcX custom boot animation. This "
+      ui_print " will also add support for bootanimation zip instead "
+      ui_print " of Samsung's qmg, so you can always replace it in   "
+      ui_print " system/media/bootanimation.zip for one you like     "
+      ui_print " "
+      ui_print " ---------Volume up = Yes | Volume down = No-------- "
+      ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ "
+      if $yes; then
+         ui_print " Custom boot animation zip support added "
+         package_extract_dir "bootzip" /system
+         set_perm 0 0 0755 /system/bin/bootanimation
+         set_perm 0 0 0644 /system/lib64/libbootanimation.so
+         set_perm 0 0 0644 /system/media/bootanimation.zip
+      else
+         ui_print " Stock qmg boot animation will be used instead "
+      fi
+   fi
+   ui_print " Adding extra permissions to vendor files "
+   set_metadata /vendor/etc/midas/SRIBMidas_aiDENOISE_FP16_V900.caffemodel capabilities 0x0 selabel u:object_r:vendor_configs_file:s0
+   set_metadata /vendor/etc/midas/SRIBMidas_aiMOIREREMOVE_Coarse_FP32_V800.caffemodel capabilities 0x0 selabel u:object_r:vendor_configs_file:s0
+   set_metadata /vendor/etc/midas/SRIBMidas_aiMOIREREMOVE_Fine_FP32_V800.caffemodel capabilities 0x0 selabel u:object_r:vendor_configs_file:s0
+   set_metadata /vendor/etc/midas/SRIBMidas_aiUNIFIED_FP16_V610.caffemodel capabilities 0x0 selabel u:object_r:vendor_configs_file:s0
+   set_metadata /vendor/etc/VslMesDetector/moire_detection.tflite capabilities 0x0 selabel u:object_r:vendor_configs_file:s0
+   set_metadata /vendor/saiv/image_understanding/db/smartscan_rectifier/deep_dewarp_cnn.onnx capabilities 0x0 selabel u:object_r:vendor_configs_file:s0
+   if [[ "$model" == "SM-A528B" ]]; then
+      ui_print " Applying camera lib patch... "
+      ui_print " Special thanks to ddavidavidd @ Telegram and BlackMesa123 @ XDA "
+      . "$addons/camera_patch.sh"
+      ui_print " Deleting broken arcsoft libs... "
+      delete_recursive /system/lib/libDocShadowRemoval.arcsoft.so
+      delete_recursive /system/lib64/libDocShadowRemoval.arcsoft.so
+   else
+      ui_print " "
+   fi
+   if [[ "$model" == "SM-M526BR" ]]; then
+      ui_print " Applying BR specific WiFi files... "
+      ui_print " Thanks BlackMesa123 c: "
+      package_extract_dir "m52br" /vendor
+      set_perm 0 0 0644 /vendor/firmware/ipa_fws.b01
+      set_perm 0 0 0644 /vendor/firmware/ipa_fws.elf
+      set_perm 0 0 0644 /vendor/firmware/ipa_fws.mdt
+      set_perm 0 0 0644 /vendor/firmware/wpss.b01
+      set_perm 0 0 0644 /vendor/firmware/wpss.mdt
+      set_perm 0 0 0644 /vendor/firmware/yupik_ipa_fws.b01
+      set_perm 0 0 0644 /vendor/firmware/yupik_ipa_fws.elf
+      set_perm 0 0 0644 /vendor/firmware/yupik_ipa_fws.mdt
+   else
+      ui_print " "
+   fi
+   #BTPatch
+   ui_print " Running BT patch zip "
+   flash_addon log1 bt-patch.zip
+   #Delete update
+   ui_print " Deleting update from storage and update app settings... "
+   delete_recursive /data/media/0/Android/data/com.mesalabs.ten.update
+   delete_recursive /data/data/com.mesalabs.ten.update
+   #Unmount
+   ui_print " Unmounting partitions... "
+   umount_all
+   ui_print " Wiping caches... "
+   wipe dalvik
+   wipe cache
+   #Finished
+   delete "$FILE"
+fi
 ui_print " OTA update complete! "

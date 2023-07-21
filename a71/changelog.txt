@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog from 20230502 > 20230601:
+• June security update
+*Note: This update will re-install stock kernel. Make sure you flash Magisk if you want root access in system.
+
 Changelog from 20230501 > 20230502:
 • Add permissions for NcXOnUpdate to allow notifications after wiping data
 
