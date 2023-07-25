@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog from 20230504 > 20230701:
+• July security update
+*NOTE: Re-installing Magisk may be necessary
+
 Changelog from 20230503 > 20230504:
 • May security update
 • Remove FM Radio
