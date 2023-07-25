@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OnOTAInfo>
   <RomName>NcX S21FE</RomName>
-  <VersionName>20230504 Update</VersionName>
-  <BuildNumber type="integer">20230504</BuildNumber>
-  <DownloadURL>https://9goiiw.bl.files.1drv.com/y4mKfBHj9FEq1wuGU7or7Mfy9vbliM4ccNJZMRlAaN2pWGVmk92EBwS5fM_MuOV-WtwOQDkv8cFumzw-_p3sHWl8LlFiEH5YBbfJY8MQQn8JHH9Ozjm4q3ZbmTQWsD1JESLs1eNPfobbWj0CZzCwbb-RZgPBil2MGtLCbmzQgjJI1nHxAYZ-iNZ0pwfAYgCHpb__37vGal4LF9KHVYuQRBENQ/OTA-20230504-a52q.zip</DownloadURL>
+  <VersionName>20230701 Update</VersionName>
+  <BuildNumber type="integer">20230701</BuildNumber>
+  <DownloadURL>https://y2el8g.bl.files.1drv.com/y4m-rYS95RuV8yzwdUApXm2hiIzb45FAFWKBzV2Uq4CnqjeBFZsSQY2Ya3KIEUnBoNa8dlpLN9UzljRuhrTaGNpdBFerlD7mMZN-MxjCUeiTJ5kYOLT7pqu6z5fE182w1KBRTQsOR_6ukKMuW8mLux0F1atHqe3B6pqdbMAbxHZfqFUJSfe870X6ZE7zvUR7UAdzdzO0dFje5Z6PoTP85MpLA/OTA-20230701-a52q.zip</DownloadURL>
   <AndroidVer>13</AndroidVer>
   <OneUIVer>5.1</OneUIVer>
-  <CheckMD5>85926d6f8c9244771775fac56e1df854</CheckMD5>
+  <CheckMD5>d78aeab2af8382da3daafe992c274696</CheckMD5>
   <FileSize type="long">990277757</FileSize>
   <WebsiteURL>https://forum.xda-developers.com/apps/magisk/dev-magisk-canary-channel-bleeding-edge-t3839337</WebsiteURL>
   <ChangelogHeader>https://i.ibb.co/92RxppQ/changelogheader1100.png</ChangelogHeader>
