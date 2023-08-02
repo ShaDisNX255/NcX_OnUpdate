@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OnOTAInfo>
   <RomName>NcX S21FE</RomName>
-  <VersionName>20230701 Update</VersionName>
-  <BuildNumber type="integer">20230701</BuildNumber>
-  <DownloadURL>https://y2el8g.bl.files.1drv.com/y4m-rYS95RuV8yzwdUApXm2hiIzb45FAFWKBzV2Uq4CnqjeBFZsSQY2Ya3KIEUnBoNa8dlpLN9UzljRuhrTaGNpdBFerlD7mMZN-MxjCUeiTJ5kYOLT7pqu6z5fE182w1KBRTQsOR_6ukKMuW8mLux0F1atHqe3B6pqdbMAbxHZfqFUJSfe870X6ZE7zvUR7UAdzdzO0dFje5Z6PoTP85MpLA/OTA-20230701-a52q.zip</DownloadURL>
+  <VersionName>20230702 Update</VersionName>
+  <BuildNumber type="integer">20230702</BuildNumber>
+  <DownloadURL>https://github.com/ShaDisNX255/NcX_OnUpdate/releases/download/a52q-20230702/OTA-20230702-a52q.zip</DownloadURL>
   <AndroidVer>13</AndroidVer>
   <OneUIVer>5.1</OneUIVer>
-  <CheckMD5>d78aeab2af8382da3daafe992c274696</CheckMD5>
-  <FileSize type="long">990277757</FileSize>
+  <CheckMD5>18e6400477d6aeb8c2f927eee8ee58dc</CheckMD5>
+  <FileSize type="long">9453461</FileSize>
   <WebsiteURL>https://forum.xda-developers.com/apps/magisk/dev-magisk-canary-channel-bleeding-edge-t3839337</WebsiteURL>
   <ChangelogHeader>https://i.ibb.co/92RxppQ/changelogheader1100.png</ChangelogHeader>
   <ChangelogURL>https://raw.githubusercontent.com/ShaDisNX255/NcX_OnUpdate/main/a52q/changelog.txt</ChangelogURL>

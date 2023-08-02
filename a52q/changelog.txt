@@ -1,5 +1,8 @@
 Welcome to the NcX changelog
 
+Changelog from 20230701 > 20230702:
+• Hot fix for NFC
+
 Changelog from 20230504 > 20230701:
 • July security update
 *NOTE: Re-installing Magisk may be necessary
