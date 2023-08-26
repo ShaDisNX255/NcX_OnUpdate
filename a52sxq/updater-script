@@ -16,7 +16,7 @@ setdefault devices off
 #Print
 ui_print " "
 ui_print " ___________________________________"
-ui_print "       20230701 update - A52s       "
+ui_print "       20230801 update - A52s       "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
 #Get device info
 model=$(grep_cmdline androidboot.em.model)
@@ -41,9 +41,9 @@ if ! exist "$FILE"; then
    ui_print " "
    ui_print " Press any volume button to continue... "
    if $yes; then
-      reboot recovery
+      run_program "$addons/reboot" recovery
    else
-      reboot recovery
+      run_program "$addons/reboot" recovery
    fi
 else
    #Mount
@@ -278,7 +278,13 @@ else
       ui_print " "
    fi
    if [[ "$bootrp" == "4" ]]; then
-      ui_print " U4 bootloader detected "
+      ui_print " U4 bootloader detected, installing correct files "
+      package_extract_dir "rev4" /vendor
+   else
+      ui_print " "
+   fi
+   if [[ "$bootrp" == "5" ]]; then
+      ui_print " U5 bootloader detected "
    else
       ui_print " "
    fi

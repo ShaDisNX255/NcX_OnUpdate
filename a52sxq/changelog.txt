@@ -1,6 +1,11 @@
 Welcome to the NcX changelog
 
 Changelog from 20230601 > 20230701:
+• August security update
+• Added button grid to SystemUI
+* NOTE: Make sure OTA installs both step 1 and 2. If it doesn't automatically reboot after a volume press, make sure you force reboot to recovery. Don't let it boot to system with just step 1 complete, it needs both steps or else it may brick and you'll have to update your BL version
+
+Changelog from 20230601 > 20230701:
 • July security update
 * NOTE: Make sure OTA installs both step 1 and 2. If it doesn't automatically reboot after a volume press, make sure you force reboot to recovery. Don't let it boot to system with just step 1 complete, it needs both steps or else it may brick and you'll have to update your BL version
 
