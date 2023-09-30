@@ -16,7 +16,7 @@ setdefault devices off
 #Print
 ui_print " "
 ui_print " ___________________________________"
-ui_print "       20230801 update - A52s       "
+ui_print "       20230901 update - A52s       "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
 #Get device info
 model=$(grep_cmdline androidboot.em.model)
@@ -27,6 +27,7 @@ if ! exist "$FILE"; then
    umount_all
    ui_print " Installing stock kernel... "
    update_zip boot.img $(find_block boot)
+   update_zip dtbo.img $(find_block dtbo)
    ui_print " Installing super... "
    update_zip -xz super.img.xz $(find_block super)
    create_file "$FILE"
