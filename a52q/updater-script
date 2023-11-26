@@ -14,7 +14,7 @@ setdefault devices off
 #Print
 ui_print " "
 ui_print " ___________________________________"
-ui_print "       20230801 update - A52        "
+ui_print "       20231101 update - A52        "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
 #Get device info
 model=$(grep_cmdline androidboot.em.model)
