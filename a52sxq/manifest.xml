@@ -3,7 +3,7 @@
   <RomName>NcX S21FE</RomName>
   <VersionName>20231101 Update</VersionName>
   <BuildNumber type="integer">20231101</BuildNumber>
-  <DownloadURL>https://onedrive.live.com/download?resid=8AAB79A4378B2735%212893</DownloadURL>
+  <DownloadURL>https://api.onedrive.com/v1.0/shares/s!AjUnizekeauKlk2lWLSGweMCiaAl/root/content</DownloadURL>
   <AndroidVer>13</AndroidVer>
   <OneUIVer>5.1</OneUIVer>
   <CheckMD5>99931db1f2cde5d6de5ac3a9be8921c5</CheckMD5>
