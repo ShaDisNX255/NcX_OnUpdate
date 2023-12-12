@@ -1,43 +1,12 @@
 Welcome to the NcX changelog
 
-Changelog from 20230901 > 20231101:
-• November security update
-• Removed stock dtbo
-* NOTE: Make sure OTA installs both step 1 and 2. If it doesn't automatically reboot after a volume press, make sure you force reboot to recovery. Don't let it boot to system with just step 1 complete, it needs both steps or else it may brick and you'll have to update your BL version
-
-Changelog from 20230801 > 20230901:
-• September security update
-• Added stock dtbo
-
-Changelog from 20230701 > 20230801:
-• August security update
-• Added button grid to SystemUI
-
-Changelog from 20230601 > 20230701:
-• July security update
-
-Changelog from 20230506 > 20230601:
-• June security update
-• Add support for BL versions from 1 to 4
-
-Changelog from 20230505 > 20230506:
-• May security update
-
-Changelog from 20230504 > 20230505:
-• Fix typo from previous update
-
-Changelog from 20230503 > 20230504:
-• Fix Document Scan crashing when saving a new document - Camera
-
-Changelog from 20230502 > 20230503:
-• Add permissions for NcXOnUpdate to allow notifications after wiping data
-
-Changelog from 20230501 > 20230502:
-• Fix Reboot to Download Mode - SystemUI
-
-Changelog from 20230401 > 20230501:
-• Test OTA update, no important changes
-
-
-On Update v1.0.0:
-• Initial release
+Changelog 20231202
+• Fix Voice Focus
+• Add screen modes in settings
+• Floating: Add camera access toggle
+• Floating: POI in Gallery
+• Floating: Switch to HighEnd animations
+• Floating: Allow remaster in all photos
+• Floating: Allow individual app cast in SmartView
+• Floating: Full edge lighting
+• Floating: Add interview mode in voice recorder
