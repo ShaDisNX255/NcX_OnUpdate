@@ -1,5 +1,10 @@
 Welcome to the NcX changelog
 
+Changelog 20231203
+• Introduce KnoxPatch by Salvo [BlackMesa123]
+• Introduct camera features from S21FE
+
+
 Changelog 20231202
 • Fix Voice Focus
 • Add screen modes in settings
