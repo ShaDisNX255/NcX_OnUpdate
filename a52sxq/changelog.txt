@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog 20231204
+• Add object cut/copy/save as sticker in Gallery
+
+
 Changelog 20231203
 • Introduce KnoxPatch by Salvo [BlackMesa123]
 • Introduct camera features from S21FE
