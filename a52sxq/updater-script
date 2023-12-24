@@ -14,7 +14,7 @@ setdefault devices off
 #Print
 ui_print " "
 ui_print " ___________________________________"
-ui_print "       20231205 update - A52s       "
+ui_print "       20231206 update - A52s       "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
 #Get device info
 ui_print " Beginning update... "
@@ -24,9 +24,4 @@ ui_print " Done... "
 ui_print " Installing Super image... "
 update_zip -xz super.img.xz $(find_block super)
 ui_print " Done... "
-ui_print " Mounting cache... "
-try_mount -rw /cache
-ui_print " Extracting recovery script... "
-package_extract_dir script /cache
-ui_print " Rebooting to recovery to continue the installation... "
-run_program "$addons/reboot" recovery
+ui_print " OTA Update complete! "

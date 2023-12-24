@@ -1,5 +1,10 @@
 Welcome to the NcX changelog
 
+Changelog 20231206
+• Fix/patch camera
+• Fix/patch bluetooth
+
+
 Changelog 20231205
 • Security update: December 2023
 • Fix for OnUpdate app to correctly show download size in the future
