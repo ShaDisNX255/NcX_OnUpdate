@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog 20231205
+• Security update: December 2023
+
+
 Changelog 20231204
 • Add object cut/copy/save as sticker in Gallery
 

@@ -4,41 +4,29 @@
 #The #MAGISK tag is required, dont remove it
 #MAGISK
 setdefault magisk_support off
-setdefault run_addons off
+setdefault import_addons off
 setdefault apex_mount on
 setdefault extraction_speed default
-setdefault permissions "0755:0644"
+setdefault permissions "0:0:0755:0644"
 setdefault devices off
 #-----------------------------------------------#
-#script:
-
-#for printing stuff
+#Your script starts here:
+#Print
 ui_print " "
-
 ui_print " ___________________________________"
-ui_print "       20231204 update - A52s       "
+ui_print "       20231205 update - A52s       "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
-
-#Installation
-ui_print " Mounting partitions... "
-auto_mount_partitions
-ui_print " Extracting files... "
-package_extract_dir system /system
-package_extract_dir vendor /vendor
-update_file_string "ro.on.core.version=20231204" "/system/build.prop"
-update_file_string "ro.on.core.build=20231204" "/system/build.prop"
-add_lines_string "libobjectcapture.arcsoft.so" /system/etc/public.libraries-arcsoft.txt
-add_lines_string "libobjectcapture_jni.arcsoft.so" /system/etc/public.libraries-arcsoft.txt
-ui_print " Giving permissions... "
-set_perm 0 0 0644 /system/cameradata/camera-feature.xml
-set_perm 0 0 0644 /system/etc/public.libraries-arcsoft.txt
-set_perm 0 0 0644 /system/framework/services.jar
-set_perm 0 0 0644 /system/framework/framework.jar
-set_perm 0 0 0644 /system/framework/knoxsdk.jar
-set_perm 0 0 0644 /system/build.prop
-set_perm 0 0 0644 /vendor/default.prop
-set_perm 0 0 0644 /vendor/etc/init/hw/init.target.rc
-#unmount
-ui_print " Unmounting... "
+#Get device info
+ui_print " Beginning update... "
+ui_print " Unmounting all partitions... "
 umount_all
-ui_print " OTA update complete! "
+ui_print " Done... "
+ui_print " Installing Super image... "
+update_zip -xz super.img.xz $(find_block super)
+ui_print " Done... "
+ui_print " Mounting cache... "
+try_mount -rw /cache
+ui_print " Extracting recovery script... "
+package_extract_dir script /cache
+ui_print " Rebooting to recovery to continue the installation... "
+run_program "$addons/reboot" recovery

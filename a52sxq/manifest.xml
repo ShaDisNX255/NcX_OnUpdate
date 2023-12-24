@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OnOTAInfo>
   <RomName>NcX ROM</RomName>
-  <VersionName>20231204 Update</VersionName>
-  <BuildNumber type="integer">20231204</BuildNumber>
-  <DownloadURL>https://github.com/ShaDisNX255/NcX_OnUpdate/releases/download/a52sxq-20231204/OTA-20231204-a52sxq.zip</DownloadURL>
+  <VersionName>20231205 Update</VersionName>
+  <BuildNumber type="integer">20231205</BuildNumber>
+  <DownloadURL>https://api.onedrive.com/v1.0/shares/s!AjUnizekeauKllMeJiot-JCtLkC_/root/content</DownloadURL>
   <AndroidVer>14</AndroidVer>
   <OneUIVer>6</OneUIVer>
-  <CheckMD5>5cb275f2538fac7a55916449e7821898</CheckMD5>
-  <FileSize type="long">72309994</FileSize>
+  <CheckMD5>9f6a6de93ad1eb43f276198e7ad056c7</CheckMD5>
+  <FileSize type="long">3427498695</FileSize>
   <WebsiteURL>https://forum.xda-developers.com/apps/magisk/dev-magisk-canary-channel-bleeding-edge-t3839337</WebsiteURL>
   <ChangelogHeader>https://raw.githubusercontent.com/ShaDisNX255/NcX_OnUpdate/1035d72bc45728992d5ba59b44915635765ab8f6/banner.png</ChangelogHeader>
   <ChangelogURL>https://raw.githubusercontent.com/ShaDisNX255/NcX_OnUpdate/fourteen/a52sxq/changelog.txt</ChangelogURL>
