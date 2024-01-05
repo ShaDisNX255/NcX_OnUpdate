@@ -1,34 +1,4 @@
 Welcome to the NcX changelog
 
-
-Changelog from 20230801 > 20231101:
-• November security update
-• Fixed low volume problem when volume was below 100%
-*NOTE: Re-installing Magisk/KernelSU may be necessary
-
-Changelog from 20230702 > 20230801:
-• August security update
-• Added button grid in SystemUI options
-
-Changelog from 20230701 > 20230702:
-• Hot fix for NFC
-
-Changelog from 20230504 > 20230701:
-• July security update
-*NOTE: Re-installing Magisk may be necessary
-
-Changelog from 20230503 > 20230504:
-• May security update
-• Remove FM Radio
-
-Changelog from 20230502 > 20230503:
-• Add permissions for NcXOnUpdate to allow notifications after wiping data
-
-Changelog from 20230501 > 20230502:
-• Fix Reboot to Download Mode - SystemUI
-
-Changelog from 20230401 > 20230501:
-• Fix Super Steady - Camera
-
-On Update v1.0.0:
-• Initial release
+Changelog 20231202
+• Fix camera-features
