@@ -16,7 +16,7 @@ setdefault devices off
 ui_print " "
 
 ui_print " ___________________________________"
-ui_print "       20231202 update - A52        "
+ui_print "       20231203 update - A52        "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
 
 #Installation
@@ -25,10 +25,11 @@ auto_mount_partitions
 ui_print " Extracting files... "
 package_extract_dir system /system
 ui_print " Updating ROM version strings... "
-update_file_string "ro.on.core.version=20231202" "/system/build.prop"
-update_file_string "ro.on.core.build=20231202" "/system/build.prop"
+update_file_string "ro.on.core.version=20231203" "/system/build.prop"
+update_file_string "ro.on.core.build=20231203" "/system/build.prop"
 ui_print " Giving permissions... "
 set_perm 0 0 0644 /system/cameradata/camera-feature.xml
+set_perm 0 0 0644 /system/etc/floating_feature.xml
 set_perm 0 0 0644 /system/build.prop
 #Delete update
 ui_print " Deleting update from storage and update app settings... "

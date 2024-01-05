@@ -1,4 +1,8 @@
 Welcome to the NcX changelog
 
+Changelog 20231203
+• Add clocktransition animation
+
+
 Changelog 20231202
 • Fix camera-features
