@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog 20231204
+• Fix object eraser in Gallery
+
+
 Changelog 20231203
 • Add clocktransition animation
 

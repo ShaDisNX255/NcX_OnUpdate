@@ -4,29 +4,28 @@
 #The #MAGISK tag is required, dont remove it
 #MAGISK
 setdefault magisk_support off
-setdefault run_addons off
-setdefault apex_mount on
+setdefault ensure_root off
+setdefault import_addons off
+setdefault apex_mount off
 setdefault extraction_speed default
-setdefault permissions "0755:0644"
+setdefault permissions "0:0:0755:0644"
 setdefault devices off
 #-----------------------------------------------#
-#script:
-
-#for printing stuff
-ui_print " "
-
+#Your script starts here:
 ui_print " ___________________________________"
-ui_print "       20231203 update - A52        "
+ui_print "       20231204 update - A52        "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
 
 #Installation
 ui_print " Mounting partitions... "
-auto_mount_partitions
+mount_all
+ui_print " Deleting old data... "
+delete_recursive /system/priv-app/PhotoEditor_Mid
 ui_print " Extracting files... "
 package_extract_dir system /system
 ui_print " Updating ROM version strings... "
-update_file_string "ro.on.core.version=20231203" "/system/build.prop"
-update_file_string "ro.on.core.build=20231203" "/system/build.prop"
+update_file_string "ro.on.core.version=20231204" "/system/build.prop"
+update_file_string "ro.on.core.build=20231204" "/system/build.prop"
 ui_print " Giving permissions... "
 set_perm 0 0 0644 /system/cameradata/camera-feature.xml
 set_perm 0 0 0644 /system/etc/floating_feature.xml
