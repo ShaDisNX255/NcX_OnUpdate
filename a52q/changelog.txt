@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog 20231205
+• Fix object, shadow and reflection eraser in Gallery
+
+
 Changelog 20231204
 • Fix object eraser in Gallery
 
