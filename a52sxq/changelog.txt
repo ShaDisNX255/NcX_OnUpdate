@@ -1,5 +1,15 @@
 Welcome to the NcX changelog
 
+Changelog 20240101
+• Security update: January 2024
+• Adding CSC features
+• Confirm PIN without tapping OK on 4 digits
+• Change adb secure to 0
+• Adding Gallery and Galaxy Apps to uninstallable
+• Custom NcX wallpapers
+• Further system debloat
+
+
 Changelog 20231206
 • Fix/patch camera
 • Fix/patch bluetooth

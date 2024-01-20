@@ -4,6 +4,7 @@
 #The #MAGISK tag is required, dont remove it
 #MAGISK
 setdefault magisk_support off
+setdefault ensure_root off
 setdefault import_addons off
 setdefault apex_mount on
 setdefault extraction_speed default
@@ -14,14 +15,36 @@ setdefault devices off
 #Print
 ui_print " "
 ui_print " ___________________________________"
-ui_print "       20231206 update - A52s       "
+ui_print "       20240101 update - A52s       "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
 #Get device info
-ui_print " Beginning update... "
-ui_print " Unmounting all partitions... "
-umount_all
-ui_print " Done... "
-ui_print " Installing Super image... "
-update_zip -xz super.img.xz $(find_block super)
-ui_print " Done... "
-ui_print " OTA Update complete! "
+ui_print " The following update uses bootloader bit U6/S6 "
+ui_print " Meaning that it may brick your device if you do not update "
+ui_print " Please download the latest BL_ and CP_ files "
+ui_print " And have Odin and a PC ready to flash them "
+ui_print " Press vol + if you understand this requirement and are ready to update "
+ui_print " Press vol - if you want to cancel and try to update later "
+if $yes; then
+    ui_print " Beginning update... "
+    ui_print " Unmounting all partitions... "
+    umount_all
+    ui_print " Done... "
+    ui_print " Installing super image... "
+    update_zip -xz super.img.xz $(find_block super)
+    ui_print " Done... "
+    ui_print " Installing CSC features... "
+    ui_print " Mounting optics... "
+    try_mount -rw /optics
+    ui_print " Mounting prism... "
+    try_mount -rw /prism
+    ui_print " Mounting omr... "
+    try_mount -rw /omr
+    cscfeature="$addons/omc/cscfeature.xml"
+    omc_decoder="$addons/omcdecoder"
+    . "$addons/omc_edit.sh"
+    ui_print " Done... "
+    ui_print " OTA Complete... "
+else
+    ui_print " Update posponed... "
+    ui_print " Closing... "
+fi
