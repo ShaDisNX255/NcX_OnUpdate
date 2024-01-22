@@ -1,5 +1,9 @@
 Welcome to the NcX changelog
 
+Changelog 20240102
+• Move core Samsung apps back to system
+
+
 Changelog 20240101
 • Security update: January 2024
 • Adding CSC features

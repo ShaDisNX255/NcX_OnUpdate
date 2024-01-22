@@ -15,7 +15,7 @@ setdefault devices off
 #Print
 ui_print " "
 ui_print " ___________________________________"
-ui_print "       20240101 update - A52s       "
+ui_print "       20240102 update - A52s       "
 ui_print " ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯"
 #Get device info
 ui_print " The following update uses bootloader bit U6/S6 "
