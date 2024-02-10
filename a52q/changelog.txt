@@ -1,5 +1,14 @@
 Welcome to the NcX changelog
 
+Changelog 20240101
+• January security update
+• Add CSC features
+• Confirm PIN without taping OK using 4 digits
+• Change adb secure to 0
+• Custom NcX Wallpapers
+• Unlimited time trials on paid Samsung themes
+
+
 Changelog 20231205
 • Fix object, shadow and reflection eraser in Gallery
 
