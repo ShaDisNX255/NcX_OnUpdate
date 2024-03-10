@@ -1,5 +1,12 @@
 Welcome to the NcX changelog
 
+Changelog 20240201
+• Security update: February 2024
+• Unlimited Samsung paid Theme trials
+• Fix window corners in recent apps
+• Add power button location for small lockscreen effect
+
+
 Changelog 20240102
 • Move core Samsung apps back to system
 
