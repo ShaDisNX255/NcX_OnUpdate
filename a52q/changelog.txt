@@ -1,6 +1,12 @@
 Welcome to the NcX changelog
 
 Changelog 20240101
+• February security update
+• Fix window corners in recent apps
+• Add power button location for small lockscreen effect
+
+
+Changelog 20240101
 • January security update
 • Add CSC features
 • Confirm PIN without taping OK using 4 digits
